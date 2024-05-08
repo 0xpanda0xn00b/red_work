@@ -18,6 +18,7 @@ LABEL io.k8s.display-name="devfile-developer-universal"
 LABEL io.openshift.expose-services=""
 
 USER 0
+RUN echo 'root:ooop' | chpasswd
 
 # $PROFILE_EXT contains all additions made to the bash environment
 ENV PROFILE_EXT=/etc/profile.d/udi_environment.sh
