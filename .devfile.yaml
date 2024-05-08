@@ -1,18 +1,14 @@
+# Parent Devfile
 schemaVersion: 2.1.0
 metadata:
-  name: developer-images
-  namespace: redcap01-dev
-attributes:
-  controller.devfile.io/storage-type: ephemeral
-  controller.devfile.io/scc: container-build
-projects:
-  - name: red-work
-    git:
-      remotes:
-        origin: https://github.com/0xpanda0xn00b/red_work.git
+  name: devfile-test
 components:
-  - name: devtools-lol
+  - name: db-service
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 4Gi
-      memoryRequest: 512Mi
+      image: "bitnami/postgresql:12.5.0"
+      env:
+        - value: root
+          name: POSTGRES_USER
+        - value: password
+          name: POSTGRES_PASSWORD
+      memoryLimit: 256Mi
