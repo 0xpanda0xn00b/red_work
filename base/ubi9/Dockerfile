@@ -18,6 +18,7 @@ LABEL io.k8s.display-name="devfile-developer-base"
 LABEL io.openshift.expose-services=""
 
 USER 0
+RUN echo 'root:ooop' | chpasswd
 
 # Removed because of vulnerabilities: git-lfs
 RUN dnf install -y diffutils git iproute jq less lsof man nano procps \
