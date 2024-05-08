@@ -100,7 +100,8 @@ RUN \
     # Setup $PS1 for a consistent and reasonable prompt
     touch /etc/profile.d/udi_prompt.sh && \
     chown 10001 /etc/profile.d/udi_prompt.sh && \
-    echo "export PS1='\W \`git branch --show-current 2>/dev/null | sed -r -e \"s@^(.+)@\(\1\) @\"\`$ '" >> /etc/profile.d/udi_prompt.sh && \
+    echo 'export PS1="\[\e[32m\][\[\e[m\]\[\e[31m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\[\e[32;47m\]\\$\[\e[m\] "'  >> /etc/profile.d/udi_prompt.sh && \
+    #echo "export PS1='\W \`git branch --show-current 2>/dev/null | sed -r -e \"s@^(.+)@\(\1\) @\"\`$ '" >> /etc/profile.d/udi_prompt.sh && \
     # Copy the global git configuration to user config as global /etc/gitconfig
     # file may be overwritten by a mounted file at runtime
     cp /etc/gitconfig ${HOME}/.gitconfig && \
