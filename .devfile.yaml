@@ -5,8 +5,8 @@ attributes:
   controller.devfile.io/storage-type: ephemeral
   controller.devfile.io/scc: container-build
 components:
-  - name: devtools
+  - name: devtools-lol
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 2Gi
-      memoryRequest: 256Mi
+      memoryLimit: 4Gi
+      memoryRequest: 512Mi
