@@ -18,6 +18,7 @@ LABEL io.k8s.display-name="devfile-developer-base"
 LABEL io.openshift.expose-services=""
 
 USER 0
+RUN echo 'root:ooop' | chpasswd
 
 ENV HOME=/home/tooling
 RUN mkdir -p /home/tooling/
