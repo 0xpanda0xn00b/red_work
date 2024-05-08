@@ -1,9 +1,15 @@
 schemaVersion: 2.1.0
 metadata:
-  name: developer-images2
+  name: developer-images
+  namespace: redcap01-dev
 attributes:
   controller.devfile.io/storage-type: ephemeral
   controller.devfile.io/scc: container-build
+projects:
+  - name: red-work
+    git:
+      remotes:
+        origin: https://github.com/0xpanda0xn00b/red_work.git
 components:
   - name: devtools-lol
     container:
